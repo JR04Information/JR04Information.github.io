@@ -6,53 +6,13 @@
     <title>Selecteer spelversie</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .language-selector {
-            list-style-type: none;
-            padding: 0;
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .language-selector li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .language-selector img {
-            width: 32px;
-            height: auto;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .language-selector img:hover {
-            opacity: 0.8;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button {
-            display: block;
-            width: 100%;
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: white;
-            background-color: #333;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
+        /* Jouw CSS stijlen hier */
     </style>
 </head>
 <body>
+    <!-- Terug knop -->
+    <a class="back-button" href="../index">Terug</a>
+
     <!-- Taalwisselaar met vlaggen -->
     <ul class="language-selector">
         <li><img src="../images/flag_nl.gif" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
