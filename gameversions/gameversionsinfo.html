@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Gameversion</title>
+    <title>Selecteer spelversie</title>
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .language-selector {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .language-selector img:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
+    <!-- Taalwisselaar met vlaggen -->
+    <ul class="language-selector">
+        <li><img src="../images/flag_nl.png" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
+        <li><img src="../images/flag_de.png" alt="Deutsch" onclick="changeLanguage('de')" /></li>
+        <li><img src="../images/flag_uk.png" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
+        <li><img src="../images/flag_us.png" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
+        <li><img src="../images/flag_au.png" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
+    </ul>
+
+    <!-- Inhoud van de pagina -->
     <h1>Welkom</h1>
     <p>Selecteer hieronder een knop om naar de overzichten te gaan.</p>
 
@@ -14,16 +49,40 @@
         <a class="button" href="nl_NL/indexNL">Meldkamerspel (nl_NL)</a>
         <a class="button" href="de_DE/indexDE">Leitstellenspiel (de_DE)</a>
         <a class="button" href="en_UK/indexUK">Missionchief (en_UK)</a>
-        <a class="button" href="de_US/indexUS">Missionchief (en_US)</a>
-        <a class="button" href="de_AU/indexAU">Missionchief (en_AU)</a>
+        <a class="button" href="en_US/indexUS">Missionchief (en_US)</a>
+        <a class="button" href="en_AU/indexAU">Missionchief (en_AU)</a>
     </div>
+
     <footer id="footer">
         &copy; <span id="year"></span> JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
     </footer>
+
+    <!-- JavaScript voor taalwisseling -->
     <script>
-        
         const currentYear = new Date().getFullYear();
         document.getElementById('year').textContent = currentYear;
+
+        function changeLanguage(lang) {
+            switch(lang) {
+                case "nl":
+                    document.title = "Selecteer spelversie";
+                    break;
+                case "de":
+                    document.title = "Wählen Sie Spielversion";
+                    break;
+                case "en-uk":
+                    document.title = "Select Game Version (UK)";
+                    break;
+                case "en-us":
+                    document.title = "Select Game Version (US)";
+                    break;
+                case "en-au":
+                    document.title = "Select Game Version (AU)";
+                    break;
+                default:
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
