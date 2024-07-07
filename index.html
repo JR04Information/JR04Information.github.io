@@ -13,6 +13,7 @@
         <li><img src="images/flag_de.gif" alt="Deutsch" onclick="changeLanguage('de')" /></li>
         <li><img src="images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
         <li><img src="images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
+        <li><img src="images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
     </ul>
 
     <!-- Inhoud van de pagina -->
@@ -53,6 +54,11 @@
                     document.getElementById('welcome-title').textContent = "Welcome";
                     document.getElementById('select-info').textContent = "Select a button below to go to the overviews.";
                     document.getElementById('select-button').textContent = "Select Game Version (US)";
+                    break;
+                case "en-au":
+                    document.getElementById('welcome-title').textContent = "Welcome";
+                    document.getElementById('select-info').textContent = "Select a button below to go to the overviews.";
+                    document.getElementById('select-button').textContent = "Select Game Version (AU)";
                     break;
                 default:
                     break;
