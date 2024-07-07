@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overzichten JR-2004</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welkom</h1>
+    <p>Selecteer hieronder een knop om naar de overzichten te gaan.</p>
+
+    <div class="button-container">
+        <a class="button" href="files/gameversions">LSS / MKS / MSC Info</a>
+        <a class="button" href="files/voertuigoverzichten">VoertuigOverzichten</a>
+        <a class="button" href="files/contact">Contact</a>
+    </div>
+    <footer id="footer">
+        &copy; <span id="year"></span> JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
+    </footer>
+    <script>
+        
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year').textContent = currentYear;
+    </script>
+</body>
+</html>
