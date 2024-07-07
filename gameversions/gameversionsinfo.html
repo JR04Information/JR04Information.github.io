@@ -43,46 +43,14 @@
 
     <!-- Inhoud van de pagina -->
     <h1 id="welcome-title">Welkom</h1>
-<p id="welcome-message">Selecteer hieronder een knop om naar de overzichten te gaan.</p>
-
-    function changeLanguage(lang) {
-    switch(lang) {
-        case "nl":
-            document.title = "Selecteer spelversie";
-            document.getElementById('welcome-title').textContent = "Welkom";
-            document.getElementById('welcome-message').textContent = "Selecteer hieronder een knop om naar de overzichten te gaan.";
-            break;
-        case "de":
-            document.title = "Wählen Sie Spielversion";
-            document.getElementById('welcome-title').textContent = "Willkommen";
-            document.getElementById('welcome-message').textContent = "Wählen Sie unten einen Knopf, um zu den Übersichten zu gelangen.";
-            break;
-        case "en-uk":
-            document.title = "Select Game Version (UK)";
-            document.getElementById('welcome-title').textContent = "Welcome";
-            document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
-            break;
-        case "en-us":
-            document.title = "Select Game Version (US)";
-            document.getElementById('welcome-title').textContent = "Welcome";
-            document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
-            break;
-        case "en-au":
-            document.title = "Select Game Version (AU)";
-            document.getElementById('welcome-title').textContent = "Welcome";
-            document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
-            break;
-        default:
-            break;
-    }
-}
+    <p id="welcome-message">Selecteer hieronder een knop om naar de overzichten te gaan.</p>
 
     <div class="button-container">
-        <a class="button" href="nl_NL/indexNL">Meldkamerspel (nl_NL)</a>
-        <a class="button" href="de_DE/indexDE">Leitstellenspiel (de_DE)</a>
-        <a class="button" href="en_UK/indexUK">Missionchief (en_UK)</a>
-        <a class="button" href="en_US/indexUS">Missionchief (en_US)</a>
-        <a class="button" href="en_AU/indexAU">Missionchief (en_AU)</a>
+        <a class="button" id="button-nl" href="nl_NL/indexNL">Meldkamerspel (nl_NL)</a>
+        <a class="button" id="button-de" href="de_DE/indexDE">Leitstellenspiel (de_DE)</a>
+        <a class="button" id="button-uk" href="en_UK/indexUK">Missionchief (en_UK)</a>
+        <a class="button" id="button-us" href="en_US/indexUS">Missionchief (en_US)</a>
+        <a class="button" id="button-au" href="en_AU/indexAU">Missionchief (en_AU)</a>
     </div>
 
     <footer id="footer">
@@ -98,18 +66,58 @@
             switch(lang) {
                 case "nl":
                     document.title = "Selecteer spelversie";
+                    document.getElementById('welcome-title').textContent = "Welkom";
+                    document.getElementById('welcome-message').textContent = "Selecteer hieronder een knop om naar de overzichten te gaan.";
+                    document.getElementById('button-nl').textContent = "Meldkamerspel (nl_NL)";
+                    document.getElementById('button-de').textContent = "Leitstellenspiel (de_DE)";
+                    document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
+                    document.getElementById('button-us').textContent = "Missionchief (en_US)";
+                    document.getElementById('button-au').textContent = "Missionchief (en_AU)";
+                    document.getElementById('footer').textContent = "&copy; " + currentYear + " JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.";
                     break;
                 case "de":
                     document.title = "Wählen Sie Spielversion";
+                    document.getElementById('welcome-title').textContent = "Willkommen";
+                    document.getElementById('welcome-message').textContent = "Wählen Sie unten einen Knopf, um zu den Übersichten zu gelangen.";
+                    document.getElementById('button-nl').textContent = "Meldkamerspel (nl_NL)";
+                    document.getElementById('button-de').textContent = "Leitstellenspiel (de_DE)";
+                    document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
+                    document.getElementById('button-us').textContent = "Missionchief (en_US)";
+                    document.getElementById('button-au').textContent = "Missionchief (en_AU)";
+                    document.getElementById('footer').textContent = "&copy; " + currentYear + " JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.";
                     break;
                 case "en-uk":
                     document.title = "Select Game Version (UK)";
+                    document.getElementById('welcome-title').textContent = "Welcome";
+                    document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
+                    document.getElementById('button-nl').textContent = "Meldkamerspel (nl_NL)";
+                    document.getElementById('button-de').textContent = "Leitstellenspiel (de_DE)";
+                    document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
+                    document.getElementById('button-us').textContent = "Missionchief (en_US)";
+                    document.getElementById('button-au').textContent = "Missionchief (en_AU)";
+                    document.getElementById('footer').textContent = "&copy; " + currentYear + " JR-2004. All rights reserved. Use of components from this site is prohibited without written permission.";
                     break;
                 case "en-us":
                     document.title = "Select Game Version (US)";
+                    document.getElementById('welcome-title').textContent = "Welcome";
+                    document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
+                    document.getElementById('button-nl').textContent = "Meldkamerspel (nl_NL)";
+                    document.getElementById('button-de').textContent = "Leitstellenspiel (de_DE)";
+                    document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
+                    document.getElementById('button-us').textContent = "Missionchief (en_US)";
+                    document.getElementById('button-au').textContent = "Missionchief (en_AU)";
+                    document.getElementById('footer').textContent = "&copy; " + currentYear + " JR-2004. All rights reserved. Use of components from this site is prohibited without written permission.";
                     break;
                 case "en-au":
                     document.title = "Select Game Version (AU)";
+                    document.getElementById('welcome-title').textContent = "Welcome";
+                    document.getElementById('welcome-message').textContent = "Select a button below to go to the overviews.";
+                    document.getElementById('button-nl').textContent = "Meldkamerspel (nl_NL)";
+                    document.getElementById('button-de').textContent = "Leitstellenspiel (de_DE)";
+                    document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
+                    document.getElementById('button-us').textContent = "Missionchief (en_US)";
+                    document.getElementById('button-au').textContent = "Missionchief (en_AU)";
+                    document.getElementById('footer').textContent = "&copy; " + currentYear + " JR-2004. All rights reserved. Use of components from this site is prohibited without written permission.";
                     break;
                 default:
                     break;
