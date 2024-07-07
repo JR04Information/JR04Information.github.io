@@ -19,7 +19,8 @@
 
         .button-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin-top: 20px;
         }
 
@@ -82,7 +83,7 @@
         <li><img src="../images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
         <li><img src="../images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
         <li><img src="../images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
-        <li><a class="back-button" href="../index">Terug</a></li>
+        <li><a class="back-button" id="back-button" href="../index">Terug</a></li>
     </ul>
 
     <!-- Inhoud van de pagina -->
@@ -118,7 +119,7 @@
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
                     document.getElementById('back-button').textContent = "Terug";
-                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
                     break;
                 case "de":
                     document.title = "Wählen Sie Spielversion";
@@ -129,8 +130,8 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('bacl-button').textContent = "Zurück";
-                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
+                    document.getElementById('back-button').textContent = "Zurück";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
                     break;
                 case "en-uk":
                     document.title = "Select Game Version (UK)";
@@ -142,7 +143,7 @@
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
                     document.getElementById('back-button').textContent = "Back";
-                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 case "en-us":
                     document.title = "Select Game Version (US)";
@@ -154,7 +155,7 @@
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
                     document.getElementById('back-button').textContent = "Back";
-                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 case "en-au":
                     document.title = "Select Game Version (AU)";
@@ -166,9 +167,7 @@
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
                     document.getElementById('back-button').textContent = "Back";
-                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
-                    break;
-                default:
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
             }
         }
