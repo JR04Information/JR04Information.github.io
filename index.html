@@ -7,19 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welkom</h1>
+    <!-- Taalwisselaar met vlaggen -->
+    <ul class="language-selector">
+        <li><img src="flag_nl.png" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
+        <li><img src="flag_de.png" alt="Deutsch" onclick="changeLanguage('de')" /></li>
+        <li><img src="flag_en.png" alt="English" onclick="changeLanguage('en')" /></li>
+    </ul>
+
+    <h1 id="welcome-title">Welkom</h1>
     <p>Selecteer hieronder een knop om naar de overzichten te gaan.</p>
 
     <div class="button-container">
         <a class="button" href="gameversions/gameversionsinfo">Select Version</a>
     </div>
+
     <footer id="footer">
         &copy; <span id="year"></span> JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
     </footer>
+
     <script>
-        
         const currentYear = new Date().getFullYear();
         document.getElementById('year').textContent = currentYear;
+
+        function changeLanguage(lang) {
+            switch(lang) {
+                case "nl":
+                    document.getElementById('welcome-title').textContent = "Welkom"; // Nederlands
+                    break;
+                case "de":
+                    document.getElementById('welcome-title').textContent = "Willkommen"; // Duits
+                    break;
+                case "en":
+                    document.getElementById('welcome-title').textContent = "Welcome"; // Engels
+                    break;
+                default:
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
