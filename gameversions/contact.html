@@ -110,8 +110,8 @@
     </ul>
     
     <div class="button-container">
-        <a class="button" href="/files/meldkamerspel">Meldkamerspel</a>
-        <a class="button" href="/files/voertuigoverzichten">VoertuigOverzichten</a>
+        <a class="button" href="/files/meldkamerspel">Terug</a>
+        <a class="button" href="/files/voertuigoverzichten">Gameversions</a>
     </div>
     <div class="container">
         <h1 id="contact-title">Contact</h1>
@@ -143,6 +143,8 @@
                     document.getElementById('contact-note').textContent = "Als u wilt dat wij contact met u opnemen, verzoeken wij u vriendelijk om uw contactgegevens, zoals uw e-mailadres, in het tekstvak hieronder te vermelden.";
                     document.getElementById('message-label').textContent = "Uw bericht:";
                     document.getElementById('submit-button').textContent = "Verzend";
+                    document.getElementsByClassName('button')[0].textContent = "Terug";
+                    document.getElementsByClassName('button')[1].textContent = "Gameversions";
                     document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
                     break;
                 case "de":
@@ -152,10 +154,32 @@
                     document.getElementById('contact-note').textContent = "Wenn Sie möchten, dass wir Sie kontaktieren, geben Sie bitte Ihre Kontaktdaten, wie z.B. Ihre E-Mail-Adresse, in das untenstehende Textfeld ein.";
                     document.getElementById('message-label').textContent = "Ihre Nachricht:";
                     document.getElementById('submit-button').textContent = "Senden";
+                    document.getElementsByClassName('button')[0].textContent = "Zurück";
+                    document.getElementsByClassName('button')[1].textContent = "Spielversionen";
                     document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
                     break;
                 case "en-uk":
+                    document.title = "Contact";
+                    document.getElementById('contact-title').textContent = "Contact";
+                    document.getElementById('contact-instruction').textContent = "Contact us via the form below:";
+                    document.getElementById('contact-note').textContent = "If you would like us to contact you, please kindly include your contact details, such as your email address, in the text box below.";
+                    document.getElementById('message-label').textContent = "Your message:";
+                    document.getElementById('submit-button').textContent = "Send";
+                    document.getElementsByClassName('button')[0].textContent = "Back";
+                    document.getElementsByClassName('button')[1].textContent = "Gameversions";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
                 case "en-us":
+                    document.title = "Contact";
+                    document.getElementById('contact-title').textContent = "Contact";
+                    document.getElementById('contact-instruction').textContent = "Contact us via the form below:";
+                    document.getElementById('contact-note').textContent = "If you would like us to contact you, please kindly include your contact details, such as your email address, in the text box below.";
+                    document.getElementById('message-label').textContent = "Your message:";
+                    document.getElementById('submit-button').textContent = "Send";
+                    document.getElementsByClassName('button')[0].textContent = "Back";
+                    document.getElementsByClassName('button')[1].textContent = "Gameversions";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
                 case "en-au":
                     document.title = "Contact";
                     document.getElementById('contact-title').textContent = "Contact";
@@ -163,6 +187,8 @@
                     document.getElementById('contact-note').textContent = "If you would like us to contact you, please kindly include your contact details, such as your email address, in the text box below.";
                     document.getElementById('message-label').textContent = "Your message:";
                     document.getElementById('submit-button').textContent = "Send";
+                    document.getElementsByClassName('button')[0].textContent = "Back";
+                    document.getElementsByClassName('button')[1].textContent = "Gameversions";
                     document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 default:
@@ -171,4 +197,4 @@
         }
     </script>
 </body>
-</html>
+</html> = "Contact
