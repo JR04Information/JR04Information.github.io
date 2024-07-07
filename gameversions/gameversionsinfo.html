@@ -6,13 +6,75 @@
     <title>Selecteer spelversie</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Jouw CSS stijlen hier */
+        /* CSS Stijlen */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, p {
+            padding: 16px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button, .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover, .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .language-selector {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .language-selector img:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #e1e1e1;
+        }
     </style>
 </head>
 <body>
-    <!-- Terug knop -->
-    <a class="back-button" href="../index">Terug</a>
-
     <!-- Taalwisselaar met vlaggen -->
     <ul class="language-selector">
         <li><img src="../images/flag_nl.gif" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
@@ -20,6 +82,7 @@
         <li><img src="../images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
         <li><img src="../images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
         <li><img src="../images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
+        <li><a class="back-button" href="../index">Terug</a></li>
     </ul>
 
     <!-- Inhoud van de pagina -->
@@ -35,7 +98,7 @@
     </div>
 
     <footer id="footer">
-        <span id="copyright">&copy;</span> <span id="year"></span> JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
+        &copy; <span id="year"></span> JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
     </footer>
 
     <!-- JavaScript voor taalwisseling -->
@@ -54,7 +117,7 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('footer').innerHTML = `<span id="copyright">&copy;</span> ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
+                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
                     break;
                 case "de":
                     document.title = "Wählen Sie Spielversion";
@@ -65,7 +128,7 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('footer').innerHTML = `<span id="copyright">&copy;</span> ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
+                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
                     break;
                 case "en-uk":
                     document.title = "Select Game Version (UK)";
@@ -76,7 +139,7 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('footer').innerHTML = `<span id="copyright">&copy;</span> ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 case "en-us":
                     document.title = "Select Game Version (US)";
@@ -87,7 +150,7 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('footer').innerHTML = `<span id="copyright">&copy;</span> ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 case "en-au":
                     document.title = "Select Game Version (AU)";
@@ -98,7 +161,7 @@
                     document.getElementById('button-uk').textContent = "Missionchief (en_UK)";
                     document.getElementById('button-us').textContent = "Missionchief (en_US)";
                     document.getElementById('button-au').textContent = "Missionchief (en_AU)";
-                    document.getElementById('footer').innerHTML = `<span id="copyright">&copy;</span> ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    document.getElementById('footer').innerHTML = `&copy; <span id="year">${currentYear}</span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
                     break;
                 default:
                     break;
