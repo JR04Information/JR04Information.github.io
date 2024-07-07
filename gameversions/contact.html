@@ -73,33 +73,102 @@
                 margin-top: 10px;
             }
         }
+
+        .language-selector {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .language-selector img:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
+    <!-- Taalwisselaar met vlaggen -->
+    <ul class="language-selector">
+        <li><img src="../images/flag_nl.gif" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
+        <li><img src="../images/flag_de.gif" alt="Deutsch" onclick="changeLanguage('de')" /></li>
+        <li><img src="../images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
+        <li><img src="../images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
+        <li><img src="../images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
+    </ul>
+    
     <div class="button-container">
         <a class="button" href="/files/meldkamerspel">Meldkamerspel</a>
         <a class="button" href="/files/voertuigoverzichten">VoertuigOverzichten</a>
     </div>
     <div class="container">
-        <h1>Contact</h1>
-        <p>Neem contact met ons op via onderstaand formulier:</p>
-        <p>Als u wilt dat wij contact met u opnemen, verzoeken wij u vriendelijk om uw contactgegevens, zoals uw e-mailadres, in het tekstvak hieronder te vermelden.</p>
+        <h1 id="contact-title">Contact</h1>
+        <p id="contact-instruction">Neem contact met ons op via onderstaand formulier:</p>
+        <p id="contact-note">Als u wilt dat wij contact met u opnemen, verzoeken wij u vriendelijk om uw contactgegevens, zoals uw e-mailadres, in het tekstvak hieronder te vermelden.</p>
 
         <form action="https://formspree.io/f/mvgpoleo" method="POST">
-            <label for="message">Uw bericht:</label>
+            <label for="message" id="message-label">Uw bericht:</label>
             <textarea id="message" name="message" rows="6" required></textarea>
-            <button type="submit">Verzend</button>
+            <button type="submit" id="submit-button">Verzend</button>
         </form>
     </div>
 
-    <footer>
-        &copy; <span id="year"></span> JR-2004. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
+    <footer id="footer">
+        &copy; <span id="year"></span> JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.
     </footer>
 
     <script>
         // JavaScript om het jaartal dynamisch in te voegen
         const currentYear = new Date().getFullYear();
         document.getElementById('year').textContent = currentYear;
+
+        function changeLanguage(lang) {
+            switch(lang) {
+                case "nl":
+                    document.title = "Contact";
+                    document.getElementById('contact-title').textContent = "Contact";
+                    document.getElementById('contact-instruction').textContent = "Neem contact met ons op via onderstaand formulier:";
+                    document.getElementById('contact-note').textContent = "Als u wilt dat wij contact met u opnemen, verzoeken wij u vriendelijk om uw contactgegevens, zoals uw e-mailadres, in het tekstvak hieronder te vermelden.";
+                    document.getElementById('message-label').textContent = "Uw bericht:";
+                    document.getElementById('submit-button').textContent = "Verzend";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
+                    break;
+                case "de":
+                    document.title = "Kontakt";
+                    document.getElementById('contact-title').textContent = "Kontakt";
+                    document.getElementById('contact-instruction').textContent = "Kontaktieren Sie uns über das untenstehende Formular:";
+                    document.getElementById('contact-note').textContent = "Wenn Sie möchten, dass wir Sie kontaktieren, geben Sie bitte Ihre Kontaktdaten, wie z.B. Ihre E-Mail-Adresse, in das untenstehende Textfeld ein.";
+                    document.getElementById('message-label').textContent = "Ihre Nachricht:";
+                    document.getElementById('submit-button').textContent = "Senden";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
+                    break;
+                case "en-uk":
+                case "en-us":
+                case "en-au":
+                    document.title = "Contact";
+                    document.getElementById('contact-title').textContent = "Contact";
+                    document.getElementById('contact-instruction').textContent = "Contact us via the form below:";
+                    document.getElementById('contact-note').textContent = "If you would like us to contact you, please kindly include your contact details, such as your email address, in the text box below.";
+                    document.getElementById('message-label').textContent = "Your message:";
+                    document.getElementById('submit-button').textContent = "Send";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
+                default:
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
