@@ -86,5 +86,27 @@ footer {
 }
 
 .button:hover {
+
+.language-selector {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.language-selector li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.language-selector img {
+    width: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Optioneel: voeg een lichte rand toe rond de vlaggen */
+    border-radius: 4px; /* Optioneel: voeg afgeronde hoeken toe aan de vlaggen */
+}
+
+.language-selector img:hover {
+    opacity: 0.8; /* Optioneel: verlaag de opaciteit van de vlag bij hover */
+}
     background-color: #0056b3; /* Donkerdere kleur bij hover */
 }
