@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle IDs</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .button-container {
+            margin-bottom: 20px; 
+        }
+        .button {
+            display: inline-block;
+            padding: 5px 10px; 
+            font-size: 14px; 
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3; 
+        }
+
+        .language-selector {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .language-selector img:hover {
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language switcher with flags -->
+    <ul class="language-selector">
+        <li><img src="../../images/flag_nl.gif" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
+        <li><img src="../../images/flag_de.gif" alt="Deutsch" onclick="changeLanguage('de')" /></li>
+        <li><img src="../../images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
+        <li><img src="../../images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
+        <li><img src="../../images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
+        <li><a class="back-button" id="back-button" href="/gameversions/en_UK/indexUK">Back</a></li>
+    </ul>
+
+    <div class="button-container">
+        <a class="button" id="game-button" href="/index">Homepage</a>
+        <a class="button" id="contact-button" href="../contact">Contact</a>
+    </div>
+
+    <h1 id="page-title">Vehicle IDs</h1>
+    <p id="page-message">Here you can find an overview of all vehicles in Missionchief (en_UK). Note: loading the overview may take a few seconds. If you want to submit a change, click on Contact above.</p>
+
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkLjI9_rrAmIBuKLFIhkRf7pv-rWUm1Rdu6PyvFvYIRDEtrq43cqcXs0Vty8sZIjJqf8kDjAOXYKZ0/pubhtml" width="100%" height="600"></iframe>
+
+    <footer id="footer">
+        &copy; <span id="year"></span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.
+    </footer>
+    
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year').textContent = currentYear;
+
+        function changeLanguage(lang) {
+            switch(lang) {
+                case "nl":
+                    document.title = "Voertuig IDs";
+                    document.getElementById('page-title').textContent = "Voertuig IDs";
+                    document.getElementById('page-message').textContent = "Hier kunt u een overzicht vinden van alle voertuigen in Meldkamerspel (en_UK). Let op: het laden van het overzicht kan enkele seconden duren. Wilt u een wijziging indienen, klik dan hierboven op Contact.";
+                    document.getElementById('game-button').textContent = "Startpagina";
+                    document.getElementById('contact-button').textContent = "Contact";
+                    document.getElementById('back-button').textContent = "Terug";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
+                    break;
+                case "de":
+                    document.title = "Fahrzeug IDs";
+                    document.getElementById('page-title').textContent = "Fahrzeug IDs";
+                    document.getElementById('page-message').textContent = "Hier finden Sie eine Übersicht aller Fahrzeuge in Leitstellenspiel (en_UK). Hinweis: Das Laden der Übersicht kann einige Sekunden dauern. Wenn Sie eine Änderung einreichen möchten, klicken Sie oben auf Kontakt.";
+                    document.getElementById('game-button').textContent = "Startseite";
+                    document.getElementById('contact-button').textContent = "Kontakt";
+                    document.getElementById('back-button').textContent = "Zurück";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
+                    break;
+                case "en-uk":
+                case "en-us":
+                case "en-au":
+                    document.title = "Vehicle IDs";
+                    document.getElementById('page-title').textContent = "Vehicle IDs";
+                    document.getElementById('page-message').textContent = "Here you can find an overview of all vehicles in Missionchief (en_UK). Note: loading the overview may take a few seconds. If you want to submit a change, click on Contact above.";
+                    document.getElementById('game-button').textContent = "Homepage";
+                    document.getElementById('contact-button').textContent = "Contact";
+                    document.getElementById('back-button').textContent = "Back";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
