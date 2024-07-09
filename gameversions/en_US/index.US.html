@@ -1,1 +1,146 @@
-Index US
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missionchief (en_US)</title>
+    <link rel="stylesheet" href="../../styles.css"> 
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+
+        .language-selector {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .language-selector img:hover {
+            opacity: 0.8;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language switcher with flags -->
+    <ul class="language-selector">
+        <li><img src="../../images/flag_nl.gif" alt="Nederlands" onclick="changeLanguage('nl')" /></li>
+        <li><img src="../../images/flag_de.gif" alt="Deutsch" onclick="changeLanguage('de')" /></li>
+        <li><img src="../../images/flag_uk.gif" alt="English (UK)" onclick="changeLanguage('en-uk')" /></li>
+        <li><img src="../../images/flag_us.gif" alt="English (US)" onclick="changeLanguage('en-us')" /></li>
+        <li><img src="../../images/flag_au.gif" alt="English (AU)" onclick="changeLanguage('en-au')" /></li>
+        <li><a class="back-button" id="back-button" href="../../index">Back</a></li>
+    </ul>
+
+    <h1 id="page-title">Missionchief (en_US)</h1>
+    <p id="page-message">Choose an overview below to view.</p>
+
+    <div class="button-container">
+        <a class="button" id="back-to-home" href="../../index">Back to the homepage</a>
+        <a class="button" id="building-ids" href="/gameversions/en_US/building_ids">Building IDs</a>
+        <a class="button" id="vehicle-ids" href="/gameversions/en_US/vehicle_ids">Vehicle IDs</a>
+        <a class="button" id="mission-ids" href="/gameversions/en_US/mission_ids">Mission IDs</a>
+    </div>
+
+    <footer id="footer">
+        &copy; <span id="year"></span> JR04. All rights reserved. Use of components from this site is prohibited without written permission.
+    </footer>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year').textContent = currentYear;
+
+        function changeLanguage(lang) {
+            switch(lang) {
+                case "nl":
+                    document.title = "Meldkamerspel (nl_NL)";
+                    document.getElementById('page-title').textContent = "Meldkamerspel (en_US)";
+                    document.getElementById('page-message').textContent = "Kies hieronder een overzicht wat u wilt bekijken.";
+                    document.getElementById('back-to-home').textContent = "Terug naar de startpagina";
+                    document.getElementById('building-ids').textContent = "Gebouw ID's";
+                    document.getElementById('vehicle-ids').textContent = "Voertuig ID's";
+                    document.getElementById('mission-ids').textContent = "Melding ID's";
+                    document.getElementById('back-button').textContent = "Terug";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle rechten voorbehouden. Gebruik van onderdelen vanaf deze site is zonder schriftelijke toestemming verboden.`;
+                    break;
+                case "de":
+                    document.title = "Leitstellenspiel (nl_NL)";
+                    document.getElementById('page-title').textContent = "Leitstellenspiel (en_US)";
+                    document.getElementById('page-message').textContent = "Wählen Sie unten eine Übersicht, die Sie anzeigen möchten.";
+                    document.getElementById('back-to-home').textContent = "Zurück zur Startseite";
+                    document.getElementById('building-ids').textContent = "Gebäude-IDs";
+                    document.getElementById('vehicle-ids').textContent = "Fahrzeug-IDs";
+                    document.getElementById('mission-ids').textContent = "Einsatz-IDs";
+                    document.getElementById('back-button').textContent = "Zurück";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. Alle Rechte vorbehalten. Die Verwendung von Teilen dieser Website ist ohne schriftliche Genehmigung untersagt.`;
+                    break;
+                case "en-uk":
+                    document.title = "Missionchief (nl_NL)";
+                    document.getElementById('page-title').textContent = "Missionchief (en_US)";
+                    document.getElementById('page-message').textContent = "Choose an overview below to view.";
+                    document.getElementById('back-to-home').textContent = "Back to the homepage";
+                    document.getElementById('building-ids').textContent = "Building IDs";
+                    document.getElementById('vehicle-ids').textContent = "Vehicle IDs";
+                    document.getElementById('mission-ids').textContent = "Mission IDs";
+                    document.getElementById('back-button').textContent = "Back";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
+                case "en-us":
+                    document.title = "Missionchief (nl_NL)";
+                    document.getElementById('page-title').textContent = "Missionchief (en_US)";
+                    document.getElementById('page-message').textContent = "Choose an overview below to view.";
+                    document.getElementById('back-to-home').textContent = "Back to the homepage";
+                    document.getElementById('building-ids').textContent = "Building IDs";
+                    document.getElementById('vehicle-ids').textContent = "Vehicle IDs";
+                    document.getElementById('mission-ids').textContent = "Mission IDs";
+                    document.getElementById('back-button').textContent = "Back";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
+                case "en-au":
+                    document.title = "Missionchief (nl_NL)";
+                    document.getElementById('page-title').textContent = "Missionchief (en_US)";
+                    document.getElementById('page-message').textContent = "Choose an overview below to view.";
+                    document.getElementById('back-to-home').textContent = "Back to the homepage";
+                    document.getElementById('building-ids').textContent = "Building IDs";
+                    document.getElementById('vehicle-ids').textContent = "Vehicle IDs";
+                    document.getElementById('mission-ids').textContent = "Mission IDs";
+                    document.getElementById('back-button').textContent = "Back";
+                    document.getElementById('footer').innerHTML = `&copy; ${currentYear} JR04. All rights reserved. Use of components from this site is prohibited without written permission.`;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
