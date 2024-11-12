@@ -30,8 +30,22 @@
 
     <!-- JavaScript voor taalwisseling -->
     <script>
-        const currentYear = new Date().getFullYear();
-        document.getElementById('year').textContent = currentYear;
+        const startYear = 2024;
+      const currentYear = new Date().getFullYear();
+      document.getElementById('year').textContent = `${startYear} - ${currentYear}`;
+
+      // Functie voor het tonen van de huidige datum en tijd
+      function updateDateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString();
+        const time = now.toLocaleTimeString();
+        document.getElementById('currentDate').textContent = date;
+        document.getElementById('currentTime').textContent = time;
+      }
+
+      // Update de datum en tijd meteen en daarna elke seconde
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
 
         function changeLanguage(lang) {
             switch(lang) {
